@@ -1,0 +1,609 @@
+$orange: rgb(255, 72, 0); // nodefinēt krāsu mainīgos
+$violet: rgb(80, 34, 141);
+$white: rgb(255, 255, 255);
+
+
+html, body{
+    margin: 0; // uzliek ārējo atstarpi 0
+    padding: 0; // uzliek iekšējo atstarpi 0
+}
+
+body{
+    font-family: 'Roboto Slab', serif; 
+    width: 100%; 
+}
+
+//navigācijas logo ,kuru novieto pa kreisi ar float, uzliek boldu, nomaina fonta lielumu, uzliek atstarpes no augšas un no apakšas. Logo linkam noņem apakšlīniju un uzliek baltu krāsu tekstam.
+.logo{ 
+    float: left; 
+    margin: 11px 24px; 
+    font-weight: bold; 
+    font-size: 24px; 
+    a{ // linkiem 
+        text-decoration: none; 
+        color: white; 
+    }
+
+    float: right;
+    fr
+    
+}
+
+//navigācijas josla
+nav{ // Joslai uzliek 100% platumu, fona krāsu nomaina.
+    width: 100%; 
+    background: #000; 
+    ul{ // nesakārtots saraksts, kuram noņem saraksta stilu, un atstarpes gan iekšējās gan arējās.
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        li{ // saraksta elements, kuru attēlo kā bloku, kas ir līnijā.
+            &:hover{ // kad uzbrauc ar pelīti mainās fona krāsa
+                background-color: #555; 
+            }
+            display: inline-block;
+            a{ // uzliek borderbox lai padding un margin neskaitās klāt pie width, attēlo kā bloku, uzliek iekšējas atstarpes, noņem teksta dekorāciju, to svītru, uzliek krāsu un fonta izmēru.
+                box-sizing: border-box;
+                display: block; 
+                width: 100%; 
+                padding: 15px 7px; 
+                text-decoration: none;
+                color: white; 
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    &:hover .dropdown-content{
+        display: block;
+    }
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        &:hover {background-color: #cfcfcf}
+    }
+}
+
+
+
+.hamburgerMenu{// platums atkarībā no loga lieluma, melna fona krāsa, pozicionē menu pogu pa labi, borderbox lai padding un margin neskaitās klāt pie width, iekšējās atstarpes, uzbraucot rāda rādītājpirkstu, nerādā pogu, jo to parāda tikai tad kad ir noteiktais loga izmērs.
+    width: 100%;
+    background: #000;  
+    text-align: right; 
+    box-sizing: border-box;
+    padding: 12px 24px; 
+    cursor: pointer; 
+    color: #fff; 
+    display: none; 
+}
+@media(max-width: 712px){ // max platums 712
+    nav ul{ // navigācijas sarakstam uzliek maksimālo augstumu 0px, lai nerādītos, centrē sarkasta elementus, viss kas pāri robežām ir noslēpts, animācija viena sekunde atverot un aizverot menu.
+        max-height: 0px;
+        background: #000000;
+        text-align: center;
+        overflow: hidden; // 
+        transition: 1s; // 
+        li{ // saraksta elements visi margin un padding būs iekš noteiktajiem platumiem un garumiem, procentuālais platums atkarība no loga lieluma.
+            box-sizing: border-box;
+            width: 100%;
+            a{ // linkam visi margin un padding būs iekš noteiktajiem platumiem un garumiem, attēlo kā bloka elementu , pilns width, un iekšējās atstarpes no visām pusēm.
+                box-sizing: border-box; 
+                display: block; // 
+                width: 100%; 
+                padding: 15px;
+            }
+        }
+    }
+    .hamburgerMenu{ //attēlo kā bloku, lai parādītos menu poga.
+        display: block;
+    }
+    .show{ // iedod maksimālo augstumu 300 pikseļi lai parādītos sarkasts.
+        max-height: 300px; 
+    }
+}
+
+
+
+
+// Produktu filtrs
+.filterProducts{
+    ul{ // nekārtots saraksts attēlo kā režģi, aizpilda lapu ar filtra pogām katra 150px platām pogām, 1fr atlikusī vieta no visa platuma, uzliek fontu un izmēru tam, ārējās un iekšējās atstarpes no visām malām.
+        display: grid; 
+        width: 90%; // platums 90% no loga izmēra šoreiz.
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+        font-family: 'Roboto Slab', serif; 
+        font-size: 1rem; 
+        margin: 50px 10px 10px 10px; 
+        padding: 0; 
+        li{ // saraksta elements visi margin un padding būs iekš noteiktajiem platumiem un garumiem, pozicionē tekstu centrā, noņem lista stilu, pieliek atstarpes iekšejās un ārējās, elementa stūrus noapaļo, uzbraucot rāda rādītājpirkstu
+            box-sizing: border-box;  
+            text-align: center;  
+            list-style: none;  
+            background: #eee; 
+            padding: 8px 20px; 
+            margin: 5px; 
+            border-radius: 9px;  
+            cursor: pointer;  
+            &.active{  // aktīvā klase, kur pieliek un noņem, maina krāsas tekstam fonam.
+                background: black; 
+                color: white; 
+            }
+        }
+    }
+}
+
+
+//produkta izkārtojums un izmēri
+.product{ // produktus attēlo kā režģī , centrē visus,
+    display: grid; 
+    justify-items: center; 
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr)); //sapilda produktus cik daudz iespējams kolonās atkarībā no atlikušā grid platuma, bet vienai kolonai ir piešķirts 200px
+    .itembox{ // klase produktiem, nosaka platumu, augstumu, ārējo atstarpi
+        width: 180px; 
+        height: 300px; 
+        margin: 5px; 
+        img{ // produkta bildei
+            cursor: pointer; //  uzbraucot rāda rādītājpirkstu
+            width: 100%; // platums 100% attiecīā pret pārējiem elementiem
+            height: 81%; // augstums attiecīā pret pārējiem elementiem
+            object-fit: cover; //Pietuvina bildi tā lai nemainītos bildes proporcijas,bet aizpildītu visu noteikto laukumu
+            transition: transform 0.3s ease-in-out; // Animācijai 3s noņemot pelīti, lai strauji nepazūd efekts
+            border-radius: 9px; // noapaļo stūrus bildei
+            &:hover{ // uzbraucot ar pelīti
+                transform: scale(0.9); //Samazina bildes izmēru kad uzliek pa virsu pelīti
+                transition: transform 0.3s ease-in-out; //Animācija lai lenāk samazinātos bilde
+            }
+        }
+        a{
+            text-decoration: none; // noņem teksta dekorāciju, to svītru.
+            color: black; // teksta krāsa melna
+        }
+    }
+}
+
+//produkta lapas klase
+.smartphone{ // iestate platumu un ārējās atstarpes, lai nolīdzinātu pa vidu.
+    width: 69%; 
+    margin:  60px auto; 
+    
+}
+
+//bilžu slaidrāde
+.sliderContainer{
+    display: inline-block; // pozicionē kā bloku kas ir līnijā.
+    width: 100%; 
+    margin: 20px auto 0px auto; // ārējās atstarpes
+    
+}
+.slider-inner{ // slaidrādes iekšējā daļa
+    width: 100%; // inner platums, atkarība no containera platuma
+    position: relative; // pozicionē relatīvi, lai varētu izmantot float left.
+    overflow: hidden; //Paslēpj lieko, lai varētu redzēt border radius
+    float: left; // Pozicionē relatīvi pa kresi, lai varētu vieglāk nopozicionētu bultiņas.
+    text-align: center; // centrē pa vidu
+    img{// bildes iekš slaidrādes.
+        display: none; // nerāda
+        width: 100%; 
+        border-radius: 15px; // noapaļo stūrus
+        &.active{ // aktīvā klase kuru pievieno lai parādītu bildi kā bloku, kas ir līnijā.
+            display: inline-block; 
+        }
+    }
+    h3{ // heading3 produkta nosaukums.
+        font-size: 24px; // fonta izmērs produkta nosaukumam.
+        position: absolute; // pozicionē absolūti
+        padding: 5px; // atstarpes no visām pusēm
+        background-color: rgba(255, 255, 255, 0.5); // fona krāsa ar 0.5 caurspīdīgumu
+        z-index: 500; // z indekss noliek elementu priekšā citiem, kuriem mazāks.
+        bottom: 7px; // no apakšas pastumj par 7px
+        left: 3px; // no sāna pastumj pa labi
+        border-radius: 12px; // noapaļo stūrus
+        margin: 0; // ārējā atstarpe 0
+    }
+
+}
+.prev, .next{ // pogas pa kreisi pa labi, lai šķirstītu bildes.
+    // float: left; 
+    margin-top: 20%; //novieto bultiņas 20% no augšas
+    cursor: pointer; // //  uzbraucot rāda rādītājpirkstu
+    background-color: rgba(255, 255, 255, 0.3); // fona krāsa ar caurspīdīgumu
+}
+.prev{ // poga iepriekšējai bildei.
+    position: absolute; // pozicionē absolūti
+    margin-right: -50px; // atņem bultiņas labo atstarpi, lai būltiņa paliktu uz bildes.
+    z-index: 100; // z indekss noliek elementu priekšā citiem, kuriem mazāks.
+}
+.next{ // poga nākamai bildei.
+    position: absolute; // pozicionē absolūti
+    margin-left: -50px; // atņem bultiņas kreiso atstarpi, lai būtiņa būtu uz bildes.
+    z-index: 100; // z indekss noliek elementu priekšā citiem, kuriem mazāks.
+}
+
+
+//Smartphone table
+$gray:  rgb(234, 233, 233); // nodefinē krāsu mainīgo
+.productTable{ // produkta tabula
+        display: table; // attēlo kā tabulu
+        margin: 15px auto; // ārējās atstarpes
+        width: 100%; // platums 100% no smartphone klases platuma
+        border-collapse: collapse; // sapludina līnijas tabulai
+        .productH1{ // sarkanais tabulas virsraksts
+            width: 90px; // platums 90px
+            text-align: left; // tekstu nolīdzina pa kreisi
+            color: red; // teksta krāsa sarkana
+            background-color: $gray; // fons pelēks
+            font-size: 18px; // fonta izmērs
+        }
+        .productH2{ // otrais tabulas virsraksts
+            width: 111px; // platums pikseļos
+            text-align: left; // nolīdzina pa kreisi
+            font-weight: bold; // uzliek bold
+        }
+        
+        td{ // tabulu rindas elementam uzliek
+            border-bottom: 1px solid $gray; // pelēku apakšlīniju
+            font-size: 15px; // fonta izmēru 15px
+        }
+}
+@media(max-width: 769px){ //ja loga maksimālais izmērs ir tad uzliek
+    .productTable, .smartphone{ // tad tabulas klasei  un konteinerim uzliek
+        width: 99%; // platumu
+    }
+    
+}
+
+//Register/login
+$purple: #290d83; // nodefinē krāsu mainīgos
+$greencheck:#62ad44;
+$redcheck: #ff1e00;
+
+.formContainer { // konteinera klase formai
+    background-color: #fff; // balts fons
+    border-radius: 5px; // noapaļo stūrus
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); // uzliek ēnu
+    width: 400px; // platums 400px
+    max-width: 100%; // maksimālais platums 100%
+    overflow: hidden; // paslēpj to kas iet pāri robežām.
+    margin: 20px auto; // ārējā atstarpe
+
+}
+
+
+.header { // Virsraksta klase pielīdzināšanai
+    padding: 0px 40px; // iekšājā atstarpe
+    h2 { // header2
+        margin: 20px 0px 0px 0px; // ārējā atstarpe
+    }
+}
+
+.form { // pati formas klase
+    padding: 30px 40px; // iekšājā atstarpe
+    button { //poga apstiprināt vai login
+        background-color: $violet; // fona krāsa violēta
+        border: 2px solid $violet; // apkārt līnija violētā krāsā
+        border-radius: 4px; // noapaļo stūrus.
+        color: #fff; // teksta krāsa 
+        display: block; // attēlo kā bloku
+        padding: 10px; // iekšājā atstarpe
+        font-family: inherit; // manto fontu
+        font-size: 16px; // fonta izmērs
+        width: 100%; // platums
+    }
+}
+.form-control { // klase katram atsevišķam div kas satur ievadlauku
+    margin-bottom: 10px; //apakšējā ārējā atstarpe
+    padding-bottom: 20px; //iekšējā apakšējā atstarpe
+    position: relative; // pozicionē relatīvi
+    label { // ievad lauku virsraksti
+        display: inline-block; // attēlo kā līnijas bloku.
+        margin-bottom: 5px; //apakšējā ārējā atstarpe
+        color: $violet; // krāsa violēta.
+        font-weight: bold; // bold teksta biezums
+    }
+    &.success { // klase kuru pievieno ja dati ir kārtībā.
+        i { // ikonas tags
+            &.fa-check-circle { // ikonas klase
+                visibility: visible; // parāda ikonu
+                color: $greencheck; // krāsa zaļa
+            }
+        }
+        input { // ievades lauks
+            border-color: $greencheck; // apmale zaļa
+        }
+    }
+    &.error { // klase kuru pievieno ja dati nav kārtībā.
+        small { // mazais teksts
+            visibility: visible; // parāda ikonu
+            color: $redcheck; // krāsa sarkana
+        }
+        i { // ikonas tags
+            &.fa-exclamation-circle { // ikonas klase
+                visibility: visible; // parāda ikonu
+                color: $redcheck; // krāsa sarkana
+            }
+        }
+        input { // ievades lauks
+            border-color: $redcheck; // apmale sarkana
+        }
+    }
+    input { // ievades lauks
+        box-sizing: border-box; // lai ievadlauki neiet ārpus izmēriem.
+        border-radius: 4px; // noapaļo stūrus.
+        display: block;  // attēlo kā bloku
+        width: 100%; 
+        font-family: inherit; // manto fontu
+        padding: 10px; // iekšājā atstarpe
+        font-size: 14px; // fonta izmērs
+    }
+    i { // ikonas tags , kuru nopozicionē, lai tas būtu savā vietā.
+        position: absolute; // pozicionē absolūti
+        top: 40px; // augšai pieliek 40px
+        right: 10px; // labai 10
+        visibility: hidden; // tagad paslēpts
+    }
+    small { // mazais teksts
+        visibility: hidden; // paslēpts
+        position: absolute; // pozicionē absolūti
+    }
+}
+.login{ // login formas klasei pieliek 50px ārējo atstarpi no augšas.
+    margin-top: 50px;
+}
+
+
+
+
+
+//Contact us form
+.contactForm{ // contact us lapas formas klase, 
+    background-color: #fff;
+    width: 99%; // procentuālais platums atkarība no loga lieluma.
+    max-width: 600px; // maksimālais platums
+    padding: 30px 40px; // iekšājā atstarpe
+    box-sizing: border-box; // lai padding un margin būtu iekš noteiktajiem lielumiem.
+    border-radius: 8px; // noapaļo stūrus.
+    text-align: center; // centrē
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); // ēna formai.
+    margin: 20px auto; // ārējā atstarpe
+
+  }
+  .contactForm h1{  // formas virsrakstam
+    margin-top: 0; // augšējā ārējā atstarpe
+    font-weight: lighter; // smalkāks fonta biezums.
+  }
+  .textbox{ // ievad lauku klase
+    border:1px solid gray; // apmale ar krāsu
+    margin: 8px 0; // ārējā atstarpe
+    padding: 12px 18px; // iekšājā atstarpe
+    border-radius: 8px; // noapaļo stūrus.
+  }
+  .textbox label{ // ievad lauka iekšējais virsraksts.
+    display: block;  // attēlo kā bloku
+    text-align: left;
+    color: #333;
+    text-transform: uppercase; // lielie burti
+    font-size: 14px; // fonta izmērs
+  }
+  .textbox input,.textbox textarea{ // ievad laukam un ziņas laukam
+    width: 100%; // procentuālais platums atkarība no loga lieluma.
+    border: none; // noņem apmali
+    outline: none; // noņem apmali kad raksta
+    font-size: 18px; // fonta izmērs
+    margin-top: 6px; // augšējā ārējā atstarpe
+  }
+  .SendButton{ // sūtīšanas poga, kura nosūta epastu,  
+    display: inline-block; //attēlo kā līnijas bloku
+    background: $violet;
+    padding: 14px 0; // iekšājā atstarpe
+    color: white;
+    text-transform: uppercase; // lielie burti
+    cursor: pointer;
+    margin-top: 8px; // augšējā ārējā atstarpe
+    width: 100%; // procentuālais platums atkarība no loga lieluma.
+    border-radius: 9px; // noapaļo stūrus.
+  }
+
+
+
+//Parallax homepage
+
+.hpSection{ // index lapas sekcijas klase, attēls centrēts, aizpilda lielumu, neatkārtojas, fiksēts, lai izskatītos kā paralax. pozīcionēts relatīvi.
+    width: 100%; // platums
+    background-position:center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    position: relative;
+    .hpHeader { // lielais virsraksts katrā sekcijā, pozicionēts absolūti, no augšas un apakšas 50% - puse no platuma un augstuma, un tad sanāk centrā. Centrē pogu ar align, un virsraksta platums atbilstoši virsraksta lielumam.
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: fit-content; 
+    }
+    h1{ // lielajam virsrakstam vēl klāt, border radius uz paša h1 strādā, jo klase ir lielāka.
+        font-size:40px; // fonta izmērs
+        color:$violet;
+        background-color:white;
+        padding: 0px 9px; // iekšājā atstarpe
+        border-radius: 40px; // noapaļo stūrus.
+    }
+    .homepageBTN{ // poga zem virskrasta, violēta, balts teksts,
+        background-color:$violet;
+        font-size: 33px; // fonta izmērs
+        padding: 6px 9px; // iekšājā atstarpe
+        border-radius: 4px; // noapaļo stūrus.
+        text-decoration: none; // noņem līniju.
+        cursor: pointer;
+        border-radius: 50px; // noapaļo stūrus.
+        border: 2px solid $violet;
+        color:white;
+    }
+    &.img1{ // pieliek sekcijām bildi un minimālo augstumu.
+        background-image: url("../images/homepage/bg1.jpg");
+        min-height: 600px;
+
+    }
+    &.img2{ // pieliek sekcijām bildi un minimālo augstumu.
+        background-image: url("../images/homepage//bg2.jpg");
+        min-height: 600px;
+    }
+    &.img3{ // pieliek sekcijām bildi un minimālo augstumu.
+        background-image: url("../images/homepage/cherry.jpg");
+        min-height: 600px;
+    }
+    &.img4{ // pieliek sekcijām bildi un minimālo augstumu.
+        background-image: url("../images/homepage/supernova.jpg");
+        min-height: 600px;
+    }
+    div{ // autora div bloks pašā apakšā
+        width: 100%;
+        &.autors{  // atēlo kā tabulu, pozicionē absolūti, no lejas un kreisās puses 0 lai raksts nāktu uz augšu ne uz leju, 50% caurspīdīgums, animācija 1s, teksts caurspīdīgs.
+            display: table;
+            position: absolute;
+            bottom: 0; 
+            left:0;
+            background-color: $violet;
+            opacity: 50%;
+            text-align: center;
+            transition: all 1s;
+            height: 20px;
+            color: transparent;
+            &:hover{ // Uzbraucot uz autora bloka, 100px augstums, animācija 1s, tekststam krāsa un caurspīdīguma maiņa.
+                height: 100px;
+                transition: all 1s;
+                color: white;
+                opacity: 90%;
+            }
+            div{ // bloks kuru attēlo kā tabulas lauku, kuru centrē vertikāli.
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+//salīdzināšanas lapa.
+.productComparison{ // produktu salīdzināšanas klase, ārējais konteineris
+    width: 80%; //platums
+    margin: 50px 5% 0px 15%; // ārējā atstarpe
+}
+.CompareContainer{ // salīdzināšanas konteineris tabulai, nolīdzina labās un kreisās.
+    width: 90%;
+    margin: 0 auto;
+}
+.productCover{ // produkta bildes klase, centrē bildi, uzliek bildei platumu un atstarpes.
+        margin-top: 50px; // augšējā ārējā atstarpe
+        width: 100%; // platums 100%
+        text-align: center;
+        img{
+            width: 50%; 
+        }
+        &.headphoneCover{
+            img{
+                width: 99%;
+            }
+        }
+
+}
+.leftProduct { // kreisā produkta klase, border box gadienā lai neiet ārpus ramjiem. Novieto pa kreisi, un platums viena trešā daļa.
+    box-sizing: border-box; 
+    float:left;  
+    width: calc(100%/3); // platums 33.33%
+} 
+.middleProduct{ // vidējā produkta klase, border box gadienā lai neiet ārpus ramjiem. Novieto pa kreisi, un platums viena trešā daļa.
+    box-sizing: border-box; 
+    float:left;  
+    width: calc(100%/3); // platums 33.33%
+} 
+.rightProduct{ // labā produkta klase, border box gadienā lai neiet ārpus ramjiem. Novieto pa kreisi, un platums viena trešā daļa.
+    box-sizing: border-box; 
+    float:Left; 
+    width: calc(100%/3); // platums 33.33%
+}
+
+
+
+// .productTable{ // 
+//     width: 90%; // platums
+// }
+
+.H2compare{ // otrais virsraksts salīdīdzināšanas lapā
+    text-align: left; //  nolīdzina pa kreisi
+    font-weight: bold; // uzliek bold
+    // daudz problēmu bija lai dabūtu responsīvu tabulu uz ļoti maziem ekrāniem.
+}
+.productInfo{ // telefona informācijas kolonas
+    width: 30%; // platums 30%
+    padding: 0 12px; // iekšājā atstarpe
+}
+//salīdzināmā
+@media(max-width: 900px){ // ja loga platums būs mazāks par 900px
+    .CompareContainer{ // salīdzināšanas konteineri padara platāku
+        width: 99%;
+    }
+    .productTable{ // produktu tabula
+        tr td:nth-child(4){ //nerādīs ceturto kolonu, jeb trešo salīdzināmo produktu.
+            display: none; 
+        }
+    }
+    .productInfo{ // tabulas info kolonas platums 42%
+        width: 42%;
+    } 
+    .H2compare{ // salīdzinājuma tabulas otrajam virsrakstam iedo jaunu platumu 
+        width: 111px; 
+    }
+    .productCover{ //salīdzināšanas produkta attēlam iedo jaunu platumu
+        img{
+            width: 60%; 
+        }
+    }
+    .rightProduct{ // nerāda izvēli bildi priekš trešā produkta.
+        display: none;
+    }
+    .leftProduct, .middleProduct{ // kreisajam un vidējam produktam uzliek 50% platumu.
+        width: 50%; 
+    }
+    
+}
+@media(max-width: 565px){// ja loga platums būs zem 565px tad
+    
+    .productTable{  // Lauž vārdus un jauns fonta izmērs.
+        word-wrap: break-word;
+        font-size: 14px; 
+    }
+    .productInfo{ // uzliku maksimālo platumu 10px un kolonas responsīvākas palika, ļoti dīvaini, ļoti ilgi nevarēju saprast, kā sataisīt.
+        max-width: 10px;
+    }
+    .H2compare{ // salīdzināšanas lapas otrā virsrakstam iestata minimālo platumu, lai pārējās kolonas neapēstu pirmo.
+        min-width: 84px;  
+    }
+}
+@media(max-width: 400px){ // Ja loga platums ir max 400px tad 
+
+    .productCover{ //salīdzināmā produkta bildi nolīdzina pa labi
+        text-align: right;
+    }
+    // vajadzēja bik savādāk taisīt, bet nu vairs nepaspēšu.
+    // pārāk ilgi responsīvu mēģināju uztaisīt.
+    //Ceru, ka visu uzrakstīju.
+}
+
+

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSM</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+    
+
+    <nav>
+        <div class="logo">
+                
+               <a href="index.html">CompareTech</a>
+        </div>
+        <div class="hamburgerMenu">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="Products.html">Products</a></li>
+                <div class="dropdown">
+                    <li class="dropdown"><a href="#">Compare</a></li>
+                    <div class="dropdown-content">
+                        <a href="compare.html">Smartphones</a>
+                        <a href="compare_headphones.html">Headphones</a>
+                    </div>
+                </div>
+                <li><a href="ContactUS.html">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+
+    
+    <div class="productComparison"> 
+
+        <div class="leftProduct">
+            <select class="selectProduct "></select>
+            <div class="productCover" id="Product1">
+                
+            </div>
+            
+        </div>  
+          
+        <div class="middleProduct"> 
+            <select class="selectProduct"></select>  
+            <div class="productCover" id="Product2">
+                
+            </div> 
+        </div> 
+          
+        <div class="rightProduct"> 
+            <select class="selectProduct"></select>   
+            <div class="productCover" id="Product3">
+                
+            </div>
+        </div> 
+    </div> 
+    <div class="CompareContainer">
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Network</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Technology</td>
+                <td class="productInfo" id="sNetworkTechnologyProduct1"></td>
+                <td class="productInfo" id="sNetworkTechnologyProduct2"></td>
+                <td class="productInfo" id="sNetworkTechnologyProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Launch</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Announced</td>
+                <td class="productInfo" id="sLaunchAnnouncedProduct1"></td>
+                <td class="productInfo" id="sLaunchAnnouncedProduct2"></td>
+                <td class="productInfo" id="sLaunchAnnouncedProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Status</td>
+                <td class="productInfo" id="sLaunchStatusProduct1"></td>
+                <td class="productInfo" id="sLaunchStatusProduct2"></td>
+                <td class="productInfo" id="sLaunchStatusProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Body</th>
+            </tr>
+            <tr>
+                
+                <td class="H2compare">Dimensions</td>
+                <td class="productInfo" id="sBodyDimensionsProduct1"></td>
+                <td class="productInfo" id="sBodyDimensionsProduct2"></td>
+                <td class="productInfo" id="sBodyDimensionsProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Weight</td>
+                <td class="productInfo" id="sBodyWeightProduct1"></td>
+                <td class="productInfo" id="sBodyWeightProduct2"></td>
+                <td class="productInfo" id="sBodyWeightProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Build</td>
+                <td class="productInfo" id="sBodyBuildProduct1"></td>
+                <td class="productInfo" id="sBodyBuildProduct2"></td>
+                <td class="productInfo" id="sBodyBuildProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">SIM</td>
+                <td class="productInfo" id="sBodySIMProduct1"></td>
+                <td class="productInfo" id="sBodySIMProduct2"></td>
+                <td class="productInfo" id="sBodySIMProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare"></td>
+                <td class="productInfo" id="sBodyExtraProduct1"></td>
+                <td class="productInfo" id="sBodyExtraProduct2"></td>
+                <td class="productInfo" id="sBodyExtraProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Display</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Type</td>
+                <td class="productInfo" id="sDisplayTypeProduct1"></td>
+                <td class="productInfo" id="sDisplayTypeProduct2"></td>
+                <td class="productInfo" id="sDisplayTypeProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Size</td>
+                <td class="productInfo" id="sDisplaySizeProduct1"></td>
+                <td class="productInfo" id="sDisplaySizeProduct2"></td>
+                <td class="productInfo" id="sDisplaySizeProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Resolution</td>
+                <td class="productInfo" id="sDisplayResolutionProduct1"></td>
+                <td class="productInfo" id="sDisplayResolutionProduct2"></td>
+                <td class="productInfo" id="sDisplayResolutionProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Protection</td>
+                <td class="productInfo" id="sDisplayProtectionProduct1"></td>
+                <td class="productInfo" id="sDisplayProtectionProduct2"></td>
+                <td class="productInfo" id="sDisplayProtectionProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare"></td>
+                <td class="productInfo" id="sDisplayExtraProduct1"></td>
+                <td class="productInfo" id="sDisplayExtraProduct2"></td>
+                <td class="productInfo" id="sDisplayExtraProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Platform</th>
+            </tr>
+            <tr>
+                <td class="H2compare">OS</td>
+                <td class="productInfo" id="sPlatformOSProduct1"></td>
+                <td class="productInfo" id="sPlatformOSProduct2"></td>
+                <td class="productInfo" id="sPlatformOSProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Chipset</td>
+                <td class="productInfo" id="sPlatformChipsetProduct1"></td>
+                <td class="productInfo" id="sPlatformChipsetProduct2"></td>
+                <td class="productInfo" id="sPlatformChipsetProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">CPU</td>
+                <td class="productInfo" id="sPlatformCPUProduct1"></td>
+                <td class="productInfo" id="sPlatformCPUProduct2"></td>
+                <td class="productInfo" id="sPlatformCPUProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">GPU</td>
+                <td class="productInfo" id="sPlatformGPUProduct1"></td>
+                <td class="productInfo" id="sPlatformGPUProduct2"></td>
+                <td class="productInfo" id="sPlatformGPUProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Memory</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Card slot</td>
+                <td class="productInfo" id="sMemoryCardSlotProduct1"></td>
+                <td class="productInfo" id="sMemoryCardSlotProduct2"></td>
+                <td class="productInfo" id="sMemoryCardSlotProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Internal</td>
+                <td class="productInfo" id="sMemoryInternalProduct1"></td>
+                <td class="productInfo" id="sMemoryInternalProduct2"></td>
+                <td class="productInfo" id="sMemoryInternalProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare"></td>
+                <td class="productInfo" id="sMemoryExtraProduct1"></td>
+                <td class="productInfo" id="sMemoryExtraProduct2"></td>
+                <td class="productInfo" id="sMemoryExtraProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Main Camera</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Camera</td>
+                <td class="productInfo" id="sMainCameraProduct1"></td>
+                <td class="productInfo" id="sMainCameraProduct2"></td>
+                <td class="productInfo" id="sMainCameraProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Features</td>
+                <td class="productInfo" id="sMainCameraFeaturesProduct1"></td>
+                <td class="productInfo" id="sMainCameraFeaturesProduct2"></td>
+                <td class="productInfo" id="sMainCameraFeaturesProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Video</td>
+                <td class="productInfo" id="sMainCameraVideoProduct1"></td>
+                <td class="productInfo" id="sMainCameraVideoProduct2"></td>
+                <td class="productInfo" id="sMainCameraVideoProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Selfie Camera</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Camera</td>
+                <td class="productInfo" id="sSelfieCameraProduct1"></td>
+                <td class="productInfo" id="sSelfieCameraProduct2"></td>
+                <td class="productInfo" id="sSelfieCameraProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Features</td>
+                <td class="productInfo" id="sSelfieCameraFeaturesProduct1"></td>
+                <td class="productInfo" id="sSelfieCameraFeaturesProduct2"></td>
+                <td class="productInfo" id="sSelfieCameraFeaturesProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Video</td>
+                <td class="productInfo" id="sSelfieCameraVideoProduct1"></td>
+                <td class="productInfo" id="sSelfieCameraVideoProduct2"></td>
+                <td class="productInfo" id="sSelfieCameraVideoProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Sound</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Loud speaker </td>
+                <td class="productInfo" id="sSoundLoudspeakerProduct1"></td>
+                <td class="productInfo" id="sSoundLoudspeakerProduct2"></td>
+                <td class="productInfo" id="sSoundLoudspeakerProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">3.5mm jack </td>
+                <td class="productInfo" id="sSoundJackProduct1"></td>
+                <td class="productInfo" id="sSoundJackProduct2"></td>
+                <td class="productInfo" id="sSoundJackProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Comms</th>
+            </tr>
+            <tr>
+                <td class="H2compare">WLAN</td>
+                <td class="productInfo" id="sCommsWLANProduct1"></td>
+                <td class="productInfo" id="sCommsWLANProduct2"></td>
+                <td class="productInfo" id="sCommsWLANProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Bluetooth</td>
+                <td class="productInfo" id="sCommsBluetoothProduct1"></td>
+                <td class="productInfo" id="sCommsBluetoothProduct2"></td>
+                <td class="productInfo" id="sCommsBluetoothProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">GPS</td>
+                <td class="productInfo" id="sCommsGPSProduct1"></td>
+                <td class="productInfo" id="sCommsGPSProduct2"></td>
+                <td class="productInfo" id="sCommsGPSProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">NFC</td>
+                <td class="productInfo" id="sCommsNFCProduct1"></td>
+                <td class="productInfo" id="sCommsNFCProduct2"></td>
+                <td class="productInfo" id="sCommsNFCProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Radio</td>
+                <td class="productInfo" id="sCommsRadioProduct1"></td>
+                <td class="productInfo" id="sCommsRadioProduct2"></td>
+                <td class="productInfo" id="sCommsRadioProduct3"></td>
+            </tr>
+        
+            <tr>
+                <td class="H2compare">USB</td>
+                <td class="productInfo" id="sCommsUSBProduct1"></td>
+                <td class="productInfo" id="sCommsUSBProduct2"></td>
+                <td class="productInfo" id="sCommsUSBProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Features</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Sensors</td>
+                <td class="productInfo" id="sFeaturesSensorsProduct1"></td>
+                <td class="productInfo" id="sFeaturesSensorsProduct2"></td>
+                <td class="productInfo" id="sFeaturesSensorsProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare"></td>
+                <td class="productInfo" id="sFeaturesExtraProduct1"></td>
+                <td class="productInfo" id="sFeaturesExtraProduct2"></td>
+                <td class="productInfo" id="sFeaturesExtraProduct3"></td>
+            </tr>
+        
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Battery</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Type</td>
+                <td class="productInfo" id="sBatteryTypeProduct1"></td>
+                <td class="productInfo" id="sBatteryTypeProduct2"></td>
+                <td class="productInfo" id="sBatteryTypeProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Charging</td>
+                <td class="productInfo" id="sBatteryChargingProduct1"></td>
+                <td class="productInfo" id="sBatteryChargingProduct2"></td>
+                <td class="productInfo" id="sBatteryChargingProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Stand-by</td>
+                <td class="productInfo" id="sBatteryStandbyProduct1"></td>
+                <td class="productInfo" id="sBatteryStandbyProduct2"></td>
+                <td class="productInfo" id="sBatteryStandbyProduct3"></td>
+            </tr>
+        
+        
+            <tr>
+                <td class="H2compare">Music play</td>
+                <td class="productInfo" id="sBatteryMusicplayProduct1"></td>
+                <td class="productInfo" id="sBatteryMusicplayProduct2"></td>
+                <td class="productInfo" id="sBatteryMusicplayProduct3"></td>
+            </tr>
+        </table>
+        
+        
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Misc</th>
+            </tr>
+            <tr>
+                
+                <td class="H2compare">Colors</td>
+                <td class="productInfo" id="sMiscColorsProduct1"></td>
+                <td class="productInfo" id="sMiscColorsProduct2"></td>
+                <td class="productInfo" id="sMiscColorsProduct3"></td>
+            </tr>
+        
+            <tr>
+                <td class="H2compare">Models</td>
+                <td class="productInfo" id="sMiscModelsProduct1"></td>
+                <td class="productInfo" id="sMiscModelsProduct2"></td>
+                <td class="productInfo" id="sMiscModelsProduct3"></td>
+            </tr>
+        
+            <tr>
+                <td class="H2compare">SAR EU</td>
+                <td class="productInfo" id="sMiscSAREUProduct1"></td>
+                <td class="productInfo" id="sMiscSAREUProduct2"></td>
+                <td class="productInfo" id="sMiscSAREUProduct3"></td>
+            </tr>
+        
+        
+            <tr>
+                <td class="H2compare">Price</td>
+                <td class="productInfo" id="sMiscPriceProduct1"></td>
+                <td class="productInfo" id="sMiscPriceProduct2"></td>
+                <td class="productInfo" id="sMiscPriceProduct3"></td>
+            </tr>
+        </table>
+    </div>
+    
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/smartphone.js"></script>
+<script src="assets/js/compare.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</body>
+</html>

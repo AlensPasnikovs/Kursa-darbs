@@ -1,0 +1,131 @@
+ss<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSM</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+    
+
+    <nav>
+        <div class="logo">
+                
+               <a href="index.html">CompareTech</a>
+        </div>
+        <div class="hamburgerMenu">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="Products.html">Products</a></li>
+                <div class="dropdown">
+                    <li class="dropdown"><a href="#">Compare</a></li>
+                    <div class="dropdown-content">
+                        <a href="compare.html">Smartphones</a>
+                        <a href="compare_headphones.html">Headphones</a>
+                    </div>
+                </div>
+                <li><a href="ContactUS.html">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="productComparison"> 
+        <div class="leftProduct">
+            <select class="selectProduct "></select>
+            <div class="productCover headphoneCover" id="Product1">
+                
+            </div>
+            
+        </div>  
+        <div class="middleProduct"> 
+            <select class="selectProduct"></select>  
+            <div class="productCover headphoneCover" id="Product2">
+                
+            </div> 
+        </div> 
+        <div class="rightProduct"> 
+            <select class="selectProduct"></select>   
+            <div class="productCover headphoneCover" id="Product3">
+                
+            </div>
+        </div> 
+    </div> 
+    <div class="CompareContainer">
+        <table class="productTable">
+            <tr>
+                <th colspan="4" class="productH1">Headphones</th>
+            </tr>
+            <tr>
+                <td class="H2compare">Type</td>
+                <td class="productInfo" id="typeProduct1"></td>
+                <td class="productInfo" id="typeProduct2"></td>
+                <td class="productInfo" id="typeProduct3"></td>
+            </tr>
+            
+            <tr>
+                <td class="H2compare">Enclosure</td>
+                <td class="productInfo" id="enclosureProduct1"></td>
+                <td class="productInfo" id="enclosureProduct2"></td>
+                <td class="productInfo" id="enclosureProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Wireless</td>
+                <td class="productInfo" id="wirelessProduct1"></td>
+                <td class="productInfo" id="wirelessProduct2"></td>
+                <td class="productInfo" id="wirelessProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Noise cancelling</td>
+                <td class="productInfo" id="noise_cancellingProduct1"></td>
+                <td class="productInfo" id="noise_cancellingProduct2"></td>
+                <td class="productInfo" id="noise_cancellingProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Microphone</td>
+                <td class="productInfo" id="micProduct1"></td>
+                <td class="productInfo" id="micProduct2"></td>
+                <td class="productInfo" id="micProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Transducer</td>
+                <td class="productInfo" id="transducerProduct1"></td>
+                <td class="productInfo" id="transducerProduct2"></td>
+                <td class="productInfo" id="transducerProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Call/Music Control</td>
+                <td class="productInfo" id="callMusicControlProduct1"></td>
+                <td class="productInfo" id="callMusicControlProduct2"></td>
+                <td class="productInfo" id="callMusicControlProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Price</td>
+                <td class="productInfo" id="priceProduct1"></td>
+                <td class="productInfo" id="priceProduct2"></td>
+                <td class="productInfo" id="priceProduct3"></td>
+            </tr>
+            <tr>
+                <td class="H2compare">Talk Through</td>
+                <td class="productInfo" id="Talk_ThroughProduct1"></td>
+                <td class="productInfo" id="Talk_ThroughProduct2"></td>
+                <td class="productInfo" id="Talk_ThroughProduct3"></td>
+            </tr>
+        </table>
+    </div>
+    
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/smartphone.js"></script>
+<script src="assets/js/compare.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+    "1":{
+            "name" : "Sony WH-1000XM4",
+            "productCover" : "https://i.rtings.com/assets/products/nggZcsC3/sony-wh-1000xm4-wireless/design-medium.jpg",
+            "type" : "Over-ear",
+            "enclosure" : "Closed-Back",
+            "Wireless" : "Yes",
+            "NoiseCancelling" : "Yes",
+            "Mic" : "Yes",
+            "Transducer" : "Dynamic",
+            "Price": "325",
+            "callMusicControl": "Yes",
+            "TalkThrough": "Yes"
+        },
+    "2":{
+            "name" : "Bose QuietComfort 45/QC45",
+            "productCover" : "https://i.rtings.com/assets/products/hsM4Rq8v/bose-quietcomfort-45-qc45-wireless/design-medium.jpg",
+            "type" : "Over-ear",
+            "enclosure" : "Closed-Back",
+            "Wireless" : "Yes",
+            "NoiseCancelling" : "Yes",
+            "Mic" : "Yes",
+            "Transducer" : "Dynamic",
+            "Price": "350",
+            "callMusicControl": "Yes",
+            "TalkThrough": "Yes"
+        },
+    "3":{
+            "name" : "Beyerdynamic DT 990 PRO",
+            "productCover" : "https://i.rtings.com/assets/products/Ods7TOPg/beyerdynamic-dt-990-pro/design-medium.jpg",
+            "type" : "Over-ear",
+            "enclosure" : "Open-Back",
+            "Wireless" : "No",
+            "NoiseCancelling" : "No",
+            "Mic" : "No",
+            "Transducer" : "Dynamic",
+            "Price": "159",
+            "callMusicControl": "No",
+            "TalkThrough": "No"
+        },
+    "4":{
+            "name" : "Audio-Technica ATH-M60x",
+            "productCover" : "https://i.rtings.com/assets/products/FHEsfMBH/audio-technica-ath-m60x/design-medium.jpg",
+            "type" : "On-ear",
+            "enclosure" : "Closed-Back",
+            "Wireless" : "No",
+            "NoiseCancelling" : "No",
+            "Mic" : "No",
+            "Transducer" : "Dynamic",
+            "Price": "200",
+            "callMusicControl": "No",
+            "TalkThrough": "No"
+        },
+        "5":{
+                "name" : "Audio-Technica test",
+                "productCover" : "https://i.rtings.com/assets/products/FHEsfMBH/audio-technica-ath-m60x/design-medium.jpg",
+                "type" : "On-ear",
+                "enclosure" : "Closed-Backk",
+                "Wireless" : "No",
+                "NoiseCancelling" : "No",
+                "Mic" : "No",
+                "Transducer" : "Dynamic",
+                "Price": "200",
+                "callMusicControl": "No",
+                "TalkThrough": "No"
+            }
+    
+}
